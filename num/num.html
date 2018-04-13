@@ -9,18 +9,13 @@
     <meta http-equiv="x-rim-auto-match" content="none">
     <!-- 移动页面中自动探测电话号码 -->
     <title>拨号功能</title>
+    <script>
+            function phone() {
+                this.location.href="tel://10086";
+            }
+        </script>
 </head>
 <body>
-    <a href="javascript:void(0)" class="num">拨打电话</a>
-    <a href="">拨号</a>
-    <script>
-        var tel = document.getElementsByClass("")[0];
-        tel.onclick = function() {
-            phone(10086);
-        }
-        function phone(date) {
-            window.location.href="tel://"+date;
-        }
-    </script>
+    <a href="javascript:void(0);" onclick="phone()">拨打电话</a>
 </body>
 </html>
