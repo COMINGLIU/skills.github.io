@@ -11,15 +11,16 @@
     <title>拨号功能</title>
 </head>
 <body>
-    <!--<a href="tel://222">拨打电话</a>
-    <a href="javascript:phone('+phone+')">拨号</a>
-    -->
-    <input type="tel" value="10086">
+    <a href="javascript:void(0)" class="num">拨打电话</a>
+    <a href="">拨号</a>
     <script>
+        var tel = document.getElementsByClass("")[0];
+        tel.onclick = function() {
+            phone(10086);
+        }
         function phone(date) {
             window.location.href="tel://"+date;
         }
-        //phone(10086);
     </script>
 </body>
 </html>
