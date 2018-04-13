@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 移动页面中自动探测电话号码 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!-- 移动页面中自动探测电话号码 -->
     <title>拨号功能</title>
 </head>
 <body>
-    <a href="tel://222">拨打电话</a>
-    <a href="javascript:phone('+phone+')">拨号</a>
+    //<a href="tel://222">拨打电话</a>
+    //<a href="javascript:phone('+phone+')">拨号</a>
+    10086
     <script>
         function phone(date) {
             window.location.href="tel://"+date;
