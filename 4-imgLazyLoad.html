@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>图片懒加载</title>
+	<style>
+		body {
+			margin: 0;
+		}
+		.box {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			align-items: stretch;
+			align-content: space-around;
+			margin: 10px auto;
+			width: 1200px;
+			height: 4500px;
+			background-color: #333;
+		}
+		.imgs {
+			width: 250px;
+			height: 250px;
+			border-radius: 20px;
+			background-color: pink;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+<div class="box"></div>
+<!-- 并入解决懒加载的两个js插件 -->
+<script src="../jsLazyload/jquery-1.11.1.min.js"></script>
+<script src="../jsLazyload/lazyload.js"></script>
+<script>
+	var lazyload = $.noConflict();  
+	// 解决两个插件的冲突：用lazyload来替代jquery插件的$符号
+	var oBox = document.querySelector(".box");
+	for(var i = 0; i < 60; i++) {
+		oBox.innerHTML +="<div class='imgs'><img src='https://cbu01.alicdn.com/img/ibank/2017/125/462/4524264521_1132355970.310x310.jpg width='250px' height='250px'></div>";
+	}
+	lazyload(function() {
+		lazyload(".imgs img").lazyload({ //获取所有的要加载的图片，调用懒加载功能
+			// 一下图片是加载前的替换图片，一般设置为量较小的图
+			placeholder: "https://tse1-mm.cn.bing.net/th?id=OIP.PMjO1XJi0aB0usJ5Hyw1HAHaGd&w=186&h=162&c=7&o=5&pid=1.7"
+		});
+	})
+</script>
+</body>
+</html>
